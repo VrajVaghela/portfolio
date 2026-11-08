@@ -6,7 +6,15 @@ import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores([
+    'dist',
+    // Vendored shadcn-registry components (Bklit, Kokonut UI, Spell UI)
+    'src/components/charts',
+    'src/components/kokonutui',
+    'src/components/special-text.tsx',
+    'src/components/marquee.tsx',
+    '*.static.*',
+  ]),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [

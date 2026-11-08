@@ -1,0 +1,9 @@
+---
+description: Installing Kokonut UI / Kokonut UI Pro components
+alwaysApply: false
+---
+
+- Free components: `npx shadcn@latest add @kokonutui/<name>`.
+- Pro components: `npx shadcn@latest add @kokonutui-pro/<name>`. The registry reads `KOKO_PRO_TOKEN` from `.env.local`.
+- Never print, log or commit `KOKO_PRO_TOKEN`. A 401 means the key is missing or wrong; ask the user for it rather than guessing.
+- Vendored components live in `src/components/kokonutui/` and are excluded from ESLint; restyle them with the portfolio tokens (`ink`, `paper`, `signal`) rather than zinc defaults.

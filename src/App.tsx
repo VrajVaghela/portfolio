@@ -1,76 +1,59 @@
-import { useEffect, useState } from "react";
-import FluidCanvas from "./components/FluidCanvas";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Metrics from "./components/Metrics";
-import Work from "./components/Work";
-import Skills from "./components/Skills";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { useCallback, useEffect, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { setScrollLocked, useSmoothScroll } from "@/lib/smooth-scroll";
+import Preloader from "@/components/site/Preloader";
+import Cursor from "@/components/site/Cursor";
+import Nav from "@/components/site/Nav";
+import Hero from "@/components/site/Hero";
+import Statement from "@/components/site/Statement";
+import CaseStudies from "@/components/site/CaseStudies";
+import ProjectIndex from "@/components/site/ProjectIndex";
+import Numbers from "@/components/site/Numbers";
+import Capabilities from "@/components/site/Capabilities";
+import Record from "@/components/site/Record";
+import Contact from "@/components/site/Contact";
+import Footer from "@/components/site/Footer";
 
-function App() {
-  const [scrollProgress, setScrollProgress] = useState(0);
+export default function App() {
+  const [ready, setReady] = useState(false);
+  useSmoothScroll();
 
   useEffect(() => {
-    // 1. Mouse pointer tracker for CSS custom properties (cursor glow)
-    const handlePointerMove = (e: PointerEvent) => {
-      document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
-      document.documentElement.style.setProperty("--my", `${e.clientY}px`);
-    };
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+    setScrollLocked(true);
+  }, []);
 
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-
-    // 2. Window Scroll progress indicators
-    const handleScroll = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("scroll", handleScroll);
-    };
+  const handleLoaded = useCallback(() => {
+    setReady(true);
+    setScrollLocked(false);
+    requestAnimationFrame(() => ScrollTrigger.refresh());
   }, []);
 
   return (
     <>
-      {/* Visual Scroll Progress Bar */}
-      <div 
-        className="scroll-progress-bar" 
-        style={{ width: `${scrollProgress}%` }} 
-      />
+      <Preloader onDone={handleLoaded} />
+      <Cursor />
+      <div className="grain" aria-hidden="true" />
+      <a
+        href="#work"
+        className="label fixed top-3 left-3 z-[90] -translate-y-20 rounded-full bg-ink px-4 py-2 text-paper focus:translate-y-0"
+      >
+        Skip to work
+      </a>
 
-      {/* Interactive Magnetic Vector Fluid Background */}
-      <FluidCanvas />
-
-      {/* Static Visual layers */}
-      <div className="noise-layer" aria-hidden="true" />
-      <div className="cursor-glow" aria-hidden="true" />
-
-      {/* Skipper Link */}
-      <a href="#work" className="skip-link">Skip to selected builds</a>
-
-      {/* Application Shell */}
-      <div className="site-wrapper">
-        <Navbar />
-        
-        <main>
-          <Hero />
-          <Metrics />
-          <Work />
-          <Skills />
-          <About />
-          <Contact />
-        </main>
-        
-        <Footer />
-      </div>
+      <Nav ready={ready} />
+      <main>
+        <Hero ready={ready} />
+        <Statement />
+        <CaseStudies />
+        <Numbers />
+        <ProjectIndex />
+        <Capabilities />
+        <Record />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 }
-
-export default App;
