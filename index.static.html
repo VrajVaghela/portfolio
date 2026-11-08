@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Vraj Vaghela, a Computer Science student at SVNIT building AI systems, full-stack products, and ML-driven decision platforms."
+    />
+    <meta name="theme-color" content="#050509" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content="Vraj Vaghela | Portfolio" />
+    <meta
+      property="og:description"
+      content="AI, machine learning, and full-stack engineering projects by Vraj Vaghela."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/hero-system.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vraj Vaghela | Portfolio" />
+    <meta
+      name="twitter:description"
+      content="AI, machine learning, and full-stack engineering projects by Vraj Vaghela."
+    />
+    <meta name="twitter:image" content="assets/hero-system.png" />
+    <title>Vraj Vaghela | Portfolio</title>
+    <link rel="icon" href="assets/vraj-avatar.png" />
+    <link rel="apple-touch-icon" href="assets/vraj-avatar.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=16" />
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="main.js?v=16"></script>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <clipPath id="squircleClip" clipPathUnits="objectBoundingBox">
+          <path d="M 0,0.5 C 0,0 0,0 0.5,0 S 1,0 1,0.5 1,1 0.5,1 0,1 0,0.5"></path>
+        </clipPath>
+      </defs>
+    </svg>
+
+    <canvas id="shader-canvas" aria-hidden="true"></canvas>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <a class="skip-link" href="#work">Skip to work</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Vraj Vaghela home">
+          <span class="brand-mark">VV</span>
+          <span>Vraj Vaghela</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <i data-lucide="menu"></i>
+        </button>
+
+        <div class="nav-links" data-nav-links>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero section text-hero" data-section-theme="hero">
+        <video class="hero-video-bg" preload="auto" autoplay loop muted playsinline aria-hidden="true">
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260520_111942_8fc50f9e-4dfd-45c1-81bb-d93342a23d87.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay" aria-hidden="true"></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow tech-pill">SYSTEMS & DATA LABS // SVNIT</p>
+          <h1 class="cinematic-title">ENGINEERING INTELLECT.</h1>
+          <p class="hero-lede">
+            Building high-performance machine learning systems, privacy-preserving networks, 
+            and intelligent document AI.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#work">
+              <i data-lucide="arrow-down-right"></i>
+              View work
+            </a>
+            <a class="button" href="assets/vraj-resume.pdf" target="_blank" rel="noreferrer">
+              <i data-lucide="download"></i>
+              Resume
+            </a>
+          </div>
+
+          <div class="hero-bottom-row">
+            <div class="social-dock" aria-label="Social links">
+              <div class="social-dock-glass"></div>
+              <div class="social-dock-inner">
+                <a class="social-tile github" href="https://github.com/VrajVaghela" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    ></path>
+                  </svg>
+                </a>
+                <a class="social-tile linkedin" href="https://www.linkedin.com/in/vraj-vaghela-950219237/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    ></path>
+                  </svg>
+                </a>
+                <a class="social-tile mail" href="mailto:vrjvghl@gmail.com" aria-label="Email">
+                  <i data-lucide="mail"></i>
+                </a>
+                <a class="social-tile resume" href="assets/vraj-resume.pdf" target="_blank" rel="noreferrer" aria-label="Resume">
+                  <i data-lucide="file-down"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-status">
+              <img class="status-avatar" src="assets/vraj-avatar.png" alt="" aria-hidden="true" />
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Open to internships, research collaborations, and ambitious builds.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="marquee-band" aria-label="Focus areas">
+        <div class="marquee-track">
+          <span>RAG systems</span>
+          <span>Federated learning</span>
+          <span>React interfaces</span>
+          <span>Forecasting</span>
+          <span>Document AI</span>
+          <span>ML dashboards</span>
+          <span>RAG systems</span>
+          <span>Federated learning</span>
+          <span>React interfaces</span>
+          <span>Forecasting</span>
+          <span>Document AI</span>
+          <span>ML dashboards</span>
+        </div>
+      </section>
+
+      <section class="metrics section compact" aria-label="Profile highlights">
+        <article class="metric reveal">
+          <span>01</span>
+          <strong>8.76 CGPA</strong>
+          <p>B.Tech CSE at SVNIT, expected May 2027.</p>
+        </article>
+        <article class="metric reveal">
+          <span>02</span>
+          <strong>12 public repos</strong>
+          <p>Recent work across Python, TypeScript, and JavaScript.</p>
+        </article>
+        <article class="metric reveal">
+          <span>03</span>
+          <strong>Top 11 of 7,000+</strong>
+          <p>Selected in a national innovation hackathon.</p>
+        </article>
+        <article class="metric reveal">
+          <span>04</span>
+          <strong>AI + product</strong>
+          <p>RAG, federated learning, forecasting, and React dashboards.</p>
+        </article>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow tech-pill">Selected work</p>
+          <h2>Projects with real system depth.</h2>
+          <p>
+            A focused set from the resume and GitHub profile, tuned for what a reviewer
+            can scan quickly: problem, technical substance, and proof of execution.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card feature reveal">
+            <div class="project-topline">
+              <span class="project-type">AI platform</span>
+              <a href="https://github.com/VrajVaghela/FinSight" target="_blank" rel="noreferrer" aria-label="Open FinSight on GitHub">
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+            <h3>FinSight AI</h3>
+            <p>
+              Enterprise-grade financial document intelligence platform with structural
+              parsing, hybrid retrieval, neural reranking, refusal gates, clickable
+              citations, and generative UI for charts and source-backed answers.
+            </p>
+            <ul class="project-points">
+              <li>Docling-based layout extraction for tables and document hierarchy.</li>
+              <li>Dense vector search, BM25, RRF, and cross-encoder reranking.</li>
+              <li>Voice workflow with STT, TTS, silence detection, and barge-in.</li>
+            </ul>
+            <div class="tags">
+              <span>Python</span>
+              <span>RAG</span>
+              <span>Qdrant</span>
+              <span>GenUI</span>
+            </div>
+          </article>
+
+          <article class="project-card feature reveal">
+            <div class="project-topline">
+              <span class="project-type">Adaptive learning</span>
+              <a href="https://dashing-nougat-c66726.netlify.app/" target="_blank" rel="noreferrer" aria-label="Open Enfinity live site">
+                <i data-lucide="external-link"></i>
+              </a>
+            </div>
+            <h3>Enfinity (Briefly)</h3>
+            <p>
+              Distraction-free adaptive reading platform using a Comprehension Friction
+              Score engine to detect struggle and trigger per-paragraph NLP support.
+            </p>
+            <ul class="project-points">
+              <li>Tracked dwell time, scroll regression, reading speed, and hesitation.</li>
+              <li>Built adaptive modes for automatic, ask-me, and manual intervention.</li>
+              <li>Integrated Gemini, Supabase auth, Dexie persistence, and NLP fallbacks.</li>
+            </ul>
+            <div class="tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Zustand</span>
+              <span>NLP</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Retail ML</span>
+              <a href="https://github.com/NityaSingh77/Sparkathon" target="_blank" rel="noreferrer" aria-label="Open Retail Stockout project on GitHub">
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+            <h3>Retail Stockout Prediction</h3>
+            <p>
+              Decision support platform that forecasts stockouts and recommends
+              targeted inter-store inventory transfers across retail locations.
+            </p>
+            <div class="mini-meta">
+              <span>R2 around 0.97</span>
+              <span>Demand forecasting</span>
+            </div>
+            <div class="tags">
+              <span>React</span>
+              <span>Supabase</span>
+              <span>Python</span>
+              <span>Scikit-learn</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Federated learning</span>
+              <a href="https://github.com/Dhruvi-Rana09/MedFL" target="_blank" rel="noreferrer" aria-label="Open MedFL on GitHub">
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+            <h3>MedFL</h3>
+            <p>
+              Privacy-preserving federated learning platform for medical model training
+              across decentralized client nodes, with a 6-service containerized setup.
+            </p>
+            <div class="mini-meta">
+              <span>DWFed aggregation</span>
+              <span>Docker services</span>
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>Docker</span>
+              <span>REST APIs</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Trading systems</span>
+              <a href="https://github.com/VrajVaghela/algoX" target="_blank" rel="noreferrer" aria-label="Open AlgoX on GitHub">
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+            <h3>AlgoX</h3>
+            <p>
+              Algorithmic trading backtesting platform with strategy comparison,
+              technical indicators, performance analytics, CSV import, and exports.
+            </p>
+            <div class="mini-meta">
+              <span>9 strategies</span>
+              <span>20+ indicators</span>
+            </div>
+            <div class="tags">
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>Vite</span>
+              <span>Tailwind</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-topline">
+              <span class="project-type">Security ML</span>
+              <a href="https://github.com/VrajVaghela/DSlab_Project_Network_Intrusion_detection_Kirtan_Sodagar_U23CS051" target="_blank" rel="noreferrer" aria-label="Open Network Intrusion Detection project on GitHub">
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+            <h3>Network Intrusion Detection</h3>
+            <p>
+              Research-grade NIDS on NSL-KDD with supervised classification,
+              anomaly detection, explainability, and tuned validation workflows.
+            </p>
+            <div class="mini-meta">
+              <span>XGBoost + Optuna</span>
+              <span>SHAP explainability</span>
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>Jupyter</span>
+              <span>SMOTE</span>
+              <span>SHAP</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" aria-label="Other builds">
+        <div class="section-heading narrow reveal">
+          <p class="eyebrow tech-pill">More builds</p>
+          <h2>Smaller projects that show range.</h2>
+        </div>
+
+        <div class="build-list reveal">
+          <a href="https://github.com/VrajVaghela/UberClone" target="_blank" rel="noreferrer">
+            <span>UberClone</span>
+            <small>React, Node.js, Express, MongoDB, JWT, live ride tracking</small>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a href="https://github.com/VrajVaghela/EmployeeManagementSystem" target="_blank" rel="noreferrer">
+            <span>Employee Management System</span>
+            <small>Role-based task dashboards with React and local persistence</small>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a href="https://github.com/VrajVaghela/Secrets" target="_blank" rel="noreferrer">
+            <span>Secrets App</span>
+            <small>Anonymous sharing with Express, MongoDB, OAuth, and bcrypt</small>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a href="https://github.com/VrajVaghela/UrltoQr" target="_blank" rel="noreferrer">
+            <span>URL to QR</span>
+            <small>Node CLI for QR code generation from URLs</small>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a href="https://github.com/VrajVaghela/keep" target="_blank" rel="noreferrer">
+            <span>Keep Notes</span>
+            <small>Clean React note-taking app inspired by Google Keep</small>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow tech-pill">Toolkit</p>
+          <h2>Comfortable across model logic, APIs, and interfaces.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <i data-lucide="code-2"></i>
+            <h3>Languages</h3>
+            <p>C++, Python, JavaScript, TypeScript, SQL, HTML5, CSS3</p>
+          </article>
+          <article class="skill-card reveal">
+            <i data-lucide="layers"></i>
+            <h3>Frameworks</h3>
+            <p>React.js, Next.js, Node.js, Express.js, Vite</p>
+          </article>
+          <article class="skill-card reveal">
+            <i data-lucide="database"></i>
+            <h3>Data</h3>
+            <p>MongoDB, PostgreSQL, Supabase, Dexie.js</p>
+          </article>
+          <article class="skill-card reveal">
+            <i data-lucide="brain"></i>
+            <h3>ML and AI</h3>
+            <p>Scikit-learn, PyTorch, RAG systems, NLP, forecasting</p>
+          </article>
+          <article class="skill-card reveal">
+            <i data-lucide="container"></i>
+            <h3>Platforms</h3>
+            <p>Docker, Git, GitHub, Linux, REST APIs</p>
+          </article>
+          <article class="skill-card reveal">
+            <i data-lucide="chart-no-axes-combined"></i>
+            <h3>Product Areas</h3>
+            <p>Dashboards, document intelligence, federated learning, analytics</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow tech-pill">Background</p>
+          <h2>Student engineer with a systems-first habit.</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="timeline reveal">
+            <div>
+              <span class="timeline-date">Aug 2023 - Present</span>
+              <h3>Sardar Vallabhbhai National Institute of Technology</h3>
+              <p>B.Tech in Computer Science and Engineering. CGPA: 8.76/10.0. Expected graduation: May 2027.</p>
+            </div>
+            <div>
+              <span class="timeline-date">Jun 2022 - Apr 2023</span>
+              <h3>Netaji Model School</h3>
+              <p>Senior Secondary, GHSEB Science. Graduated with 82%.</p>
+            </div>
+          </article>
+
+          <article class="recognition reveal">
+            <i data-lucide="award"></i>
+            <h3>Recognition</h3>
+            <p>
+              Selected among the top 11 teams out of 7,000+ participants in a national
+              innovation hackathon.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="contact-copy reveal">
+          <p class="eyebrow tech-pill">Contact</p>
+          <h2>Let us build something sharp.</h2>
+          <p>
+            I am especially interested in AI products, ML infrastructure, research-heavy
+            prototypes, and full-stack systems where engineering detail matters.
+          </p>
+        </div>
+
+        <div class="contact-actions reveal">
+          <a class="contact-link" href="mailto:vrjvghl@gmail.com">
+            <i data-lucide="mail"></i>
+            <span>vrjvghl@gmail.com</span>
+          </a>
+          <a class="contact-link" href="tel:+919601281995">
+            <i data-lucide="phone"></i>
+            <span>+91 96012 81995</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/vraj-vaghela-950219237/" target="_blank" rel="noreferrer">
+            <i data-lucide="briefcase-business"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a class="contact-link" href="https://github.com/VrajVaghela" target="_blank" rel="noreferrer">
+            <i data-lucide="code-2"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Designed and built for Vraj Vaghela.</p>
+      <a href="#home" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+      </a>
+    </footer>
+  </body>
+</html>
